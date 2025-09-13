@@ -1,0 +1,109 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main>
+			<!--===========Registration Page Start=======================-->
+			<div class="row" style="background-image:url('images/BackPGI.jpg'); background-size:cover; background-position:center;">
+			    <div class="col-sm-12 py-5 bg-dark bg-opacity-50">
+			        <h1 class="py-3 text-center text-white fw-bold display-4">Patient Registration</h1>
+			    </div>
+			</div>
+
+			<div class="row py-3" style="background-color: #e0f7fa;">
+			    <div class="col-sm-10 mx-auto">
+
+			        <div class="row py-5 bg-light">
+			            <div class="col-sm-9 mx-auto shadow-lg py-4 px-5 rounded border border-info border-2">
+			                <input type="hidden" id="msg" th:if="${msg}" th:value="${msg}">
+			                
+			                <!-- Form Start -->
+			                <form method="post" th:object="${userDto}">
+			                    <div class="row">
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Your Name</label>
+			                            <input th:field="${userDto.name}" type="text" placeholder="Patient Name" class="form-control border-info border-2" required>
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Select Your Gender</label>
+			                            <select th:field="${userDto.gender}" class="form-control border-info border-2">
+			                                <option value="Male">Male</option>
+			                                <option value="Female">Female</option>
+			                                <option value="Other">Other</option>
+			                            </select>
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Your Age</label>
+			                            <input th:field="${userDto.age}" type="number" class="form-control border-info border-2" placeholder="Patient Age" required>
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Contact Number</label>
+			                            <input th:field="${userDto.contactNumber}" type="text" maxlength="10" pattern="\d{10}" class="form-control border-info border-2" placeholder="Contact Number">
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Aadhar No.</label>
+			                            <input th:field="${userDto.aadharNumber}" type="number" class="form-control border-info border-2" placeholder="Enter Your Aadhar" required>
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Your Email</label>
+			                            <input th:field="${userDto.email}" type="email" class="form-control border-info border-2" placeholder="Enter Your Email" required>
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Your Password</label>
+			                            <div class="input-group">
+			                                <input th:field="${userDto.password}" type="password" id="regPassword" class="form-control border-info border-2" placeholder="Enter Your Password" required>
+			                                <span class="input-group-text bg-info text-white" onclick="toggleRegPassword()" style="cursor:pointer;">
+			                                    <i class="bi bi-eye-fill" id="regEyeIcon"></i>
+			                                </span>
+			                            </div>
+			                        </div>
+
+			                        <div class="col-sm-6 mb-4">
+			                            <label class="fw-bold text-primary">Enter Address</label>
+			                            <textarea th:field="${userDto.address}" rows="1" class="form-control border-info border-2" placeholder="Enter Address"></textarea>
+			                        </div>
+
+			                        <div class="col-sm-12 text-center mt-4">
+			                            <button type="submit" class="btn px-5 bg-primary text-white fw-bold">Register</button>
+			                        </div>
+			                    </div>
+			                </form>
+			                <!-- Form End -->
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<!--===========Registration Page End=========================-->
+			
+				
+
+        <script type="text/javascript">
+			var msg = document.getElementById("msg");
+			if(msg.value!=""){
+				alert(msg.value);
+			}
+		</script>	
+		
+		<script>
+		    function toggleRegPassword() {
+		        const passwordField = document.getElementById("regPassword");
+		        const eyeIcon = document.getElementById("regEyeIcon");
+		        if (passwordField.type === "password") {
+		            passwordField.type = "text";
+		            eyeIcon.classList.remove("bi-eye-fill");
+		            eyeIcon.classList.add("bi-eye-slash-fill");
+		        } else {
+		            passwordField.type = "password";
+		            eyeIcon.classList.remove("bi-eye-slash-fill");
+		            eyeIcon.classList.add("bi-eye-fill");
+		        }
+		    }
+		</script>		
+		</main>
+	</body>
+	
+</html>

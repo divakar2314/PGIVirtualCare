@@ -1,0 +1,73 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+	<body style="background-color: #e9f7fc;"> <!-- Light info background -->
+		<main>
+			<div class="row py-5">
+				<div class="col-sm-10 mx-auto">
+					<div class="card shadow-lg border-0">
+						
+						<div class="card-header bg-primary">
+							<h3 class="m-0 text-center text-white">Book An Appointment</h3>
+							
+						</div>
+						
+						
+						
+						<div class="card-body bg-light">
+							<form method="post" th:object="${appointment}">
+								<div class="row">
+									
+									
+								
+									<!--<div class="col-sm-6 mb-4">
+										<label class="fw-bold text-primary">Select Department</label>
+										<select class="form-control border-info" th:field="${appointment.department}" required>
+											<option value="">--Select Department</option>
+											<option value="Cardiology">Cardiology</option>
+											<option value="Neurology">Neurology</option>
+											<option value="Orthopedics">Orthopedics</option>
+											<option value="Pediatrics">Pediatrics</option>
+											<option value="Dermatology">Dermatology</option>
+											<option value="General Medicine">General Medicine</option>
+											<option value="Gynecology">Gynecology</option>
+										</select>
+									</div>-->
+									
+									<div class="col-sm-6 mb-4">
+										<label class="fw-bold text-primary">Select Doctor</label>
+										<select class="form-control border-info" th:field="${appointment.doctor}" required>
+											<option value="">--Select Doctor--</option>
+											<option th:each="doctor:${doctorList}" th:value="${doctor.id}" th:text="${doctor.name + '-'+doctor.specialization}"></option>
+											
+											
+										</select>
+									</div>
+									
+									<div class="col-sm-6 mb-4">
+										<label class="fw-bold text-primary">Select Date</label>
+										<input type="date" class="form-control border-info" th:field="${appointment.date}" required>
+									</div>
+									
+									<div class="col-sm-6 mb-4">
+										<label class="fw-bold text-primary">Select Time</label>
+										<input type="time" class="form-control border-info" th:field="${appointment.time}" required>
+									</div>
+									
+									<div class="col-sm-12 mb-4">
+										<label class="fw-bold text-primary">Write Symptoms</label>
+										<textarea rows="2" class="form-control border-info" th:field="${appointment.symtomps}"required></textarea>
+									</div>
+									
+									<div class="col-sm-12 text-center">
+										<button type="submit" class="btn btn-primary text-white mt-3 px-4 shadow">Book Appointment</button>
+									</div>
+									
+								</div>
+							</form>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

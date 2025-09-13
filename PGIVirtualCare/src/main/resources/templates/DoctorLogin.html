@@ -1,0 +1,77 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+<body>
+	<main>
+		<!--===========Doctor Login Start=======================-->
+		<div class="row" style="background-image:url('images/BackPGI.jpg'); background-size:cover; background-position:center;">
+		    <div class="col-sm-12 py-5 bg-dark bg-opacity-50">
+		        <h1 class="py-3 text-center text-white fw-bold display-4">Doctor Login</h1>
+		    </div>
+		</div>
+        
+		<div class="row">
+			<div class="col-sm-12 p-0">
+				
+		<div class="container-fluid py-5" style="background-color: #e0f7fa;">
+		    <div class="row justify-content-center align-items-center">
+		        <!-- Left: Doctor Image -->
+		        <div class="col-md-5 d-none d-md-block text-center">
+		            <img src="images/AdminSide.jpg" alt="Doctor Login" class="img-fluid rounded shadow" style="max-height: 400px;">
+		        </div>
+
+		        <!-- Right: Login Form -->
+		        <div class="col-md-5 col-sm-10">
+		            <div th:if="${msg}" class="alert alert-warning alert-dismissible fade show" role="alert">
+		                <span th:text="${msg}"></span>
+		                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		            </div>
+
+		            <form action="/DoctorLogin" method="post">
+		                <div class="card p-4 shadow border-2" style="border-color:#23d6da;">
+		                    <h3 class="text-center mb-4 text-primary fw-bold">Login as a Doctor</h3>
+
+		                    <label class="fw-bold text-primary">Enter Username (Email)</label>
+		                    <input type="email" name="email" class="form-control border-2 border-info rounded-0 mb-3"
+		                        placeholder="Enter User (Email)" required>
+
+		                    <label class="fw-bold text-primary">Enter Password</label>
+		                    <div class="input-group mb-4">
+		                        <input type="password" name="password" id="doctorPassword" class="form-control border-2 border-info rounded-0" placeholder="Password" required>
+		                        <span class="input-group-text bg-info text-white" style="cursor:pointer;" onclick="toggleDoctorPassword()">
+		                            <i class="bi bi-eye-fill" id="doctorEyeIcon"></i>
+		                        </span>
+		                    </div>
+
+		                    <div class="text-center">
+		                        <button type="submit" class="btn px-5 bg-primary text-white">Login</button>
+		                    </div>
+		                </div>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+
+		</div>
+	</div>
+		<!--===========Doctor Login End=========================-->
+
+		<!-- Password Eye Toggle Script -->
+		<script>
+		    function toggleDoctorPassword() {
+		        const password = document.getElementById("doctorPassword");
+		        const icon = document.getElementById("doctorEyeIcon");
+		        if (password.type === "password") {
+		            password.type = "text";
+		            icon.classList.remove("bi-eye-fill");
+		            icon.classList.add("bi-eye-slash-fill");
+		        } else {
+		            password.type = "password";
+		            icon.classList.remove("bi-eye-slash-fill");
+		            icon.classList.add("bi-eye-fill");
+		        }
+		    }
+		</script>
+	</main>
+</body>
+
+</html>

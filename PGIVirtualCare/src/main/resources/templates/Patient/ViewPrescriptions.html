@@ -1,0 +1,85 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-10 mx-auto">
+				<div class="card">
+					<div class="card-header bg-primary">
+						<div class="row">
+							<div class="col-sm-6">
+								<h4 class=" text-white  fw-bold m-0">
+									View Prescription
+								</h4>
+							</div>
+
+							<div class="col-sm-6 text-right">
+								<a href="PatientDashboard" class="btn btn-light text-dark">Back To Dashboard</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Sr. No</th>
+										<th>Doctor Name</th>
+										<th>Contact No</th>
+										<th>Diagonsis</th>
+										<th>Advice</th>
+										
+										<th>Prescription Date</th>
+										
+
+
+
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr th:each="apt, srno: ${prescriptionList}">
+										<td th:text="${srno.index+1}"></td>
+										
+										<td th:text="${apt.doctor.name}"></td>
+										<td th:text="${apt.doctor.contactNumber}"></td>
+										<td th:text="${apt.diagonsis}"></td>
+										<td th:text="${apt.advice}"></td>
+									
+										<td th:text="${apt.prescriptionDate}"></td>
+										
+										<!--<td class="text-center">
+											<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name()=='PENDING'}" class="btn btn-warning btn-sm "
+												th:text="${p.status}"></a>
+											<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name()=='APPROVED'}" class="btn btn-success btn-sm "
+												th:text="${p.status}"></a>
+											<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name()=='DISABLED'}" class="btn btn-danger btn-sm "
+												th:text="${p.status}"></a>
+										</td>-->
+										<!--<td>
+											<a href="#" class="btn btn-success btn-sm">Edit</a>
+											<a th:href="@{DeletePatient(id=${p.id})}" onclick=" return confirm('Are you sure want to delete?')"
+												class="btn btn-danger btn-sm">Delete</a>
+										</td>-->
+
+										
+										
+										
+
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+</body>
+
+</html>

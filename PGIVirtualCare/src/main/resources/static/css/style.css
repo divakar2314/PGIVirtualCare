@@ -1,0 +1,142 @@
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.headline i {
+  color:  black;
+  transition: color 0.3s;
+}
+
+.headline i:hover {
+  background-color: #23d6da;
+  border: 5px solid #23d6da;
+  border-radius: 50%;
+}
+.nav-link {
+   color:  black;
+   transition: all 0.3s ease;
+ }
+
+ .nav-link:hover {
+   background-color: #23d6da; /* Hover color */
+   
+ }
+
+
+.app {
+  padding-left: 10px;
+}
+
+/* about section css */
+.icon-wrapper {
+            width: 120px;
+            height: 120px;
+            background-color: #ffffff;
+            border: 2px solid #0dcaf0;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .icon-wrapper i {
+            font-size: 22px;
+            color: #0dcaf0;
+        }
+
+        .icon-wrapper p {
+            font-size: 12px;
+            font-weight: bold;
+            color: black;
+            margin: 6px 0 0 0;
+            text-align: center;
+        }
+
+        .card-img-custom {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .about-image-card {
+            height: 100%;
+        }
+
+        .text-content {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+
+
+        /* services section */
+
+        .custom-card {
+        width: 100%;
+        min-height: 250px;
+        max-height: 70%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .custom-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .hover-info:hover {
+    color: #0dcaf0 !important; /* Bootstrap 'info' color */
+    
+  }
+  
+  .section-title {
+        color: black;
+        font-weight: bold;
+      }
+  
+  
+  .card {
+        border: none;
+        border-radius: 12px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        background-color: #e6f0ff;
+      }
+      .icon {
+        font-size: 2rem;
+        color: #0d6efd;
+      }
+      .bg-hospital {
+        background-color:cadetblue;
+      }
+      .image-block {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .image-block img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+	  
+	  .back-to-top {
+	      position: fixed;
+	      bottom: 20px;
+	      right: 20px;
+	      z-index: 999;
+	      transition: all 0.3s ease;
+	    }
+
+	    .back-to-top:hover {
+	      transform: translateY(-5px);
+	      background-color: #0dcaf0;
+	    }
+
+
+   
+

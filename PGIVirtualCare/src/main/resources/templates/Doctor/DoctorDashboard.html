@@ -1,0 +1,103 @@
+<html th:replace="~{Doctor/Doctorbase::layout(~{::main})}">
+	<body>
+		<main>
+			
+			<!-- Main Content -->
+			<div class="row">
+				<div class="col-sm-12">
+					
+				</div>
+			</div>
+			    <div class="main-content">
+					<h4> Welcome, <span th:text="${session.loggedInDoctor.name}"></span></h4>
+			        <div class="row g-4 mb-4">
+			            <div class="col-md-3">
+			                <div class="card-box bg-danger">
+			                    <h5>1.2k</h5>
+			                    <p>Total Appointment</p>
+			                </div>
+			            </div>
+			            <div class="col-md-3">
+			                <div class="card-box bg-warning">
+			                    <h5>12</h5>
+			                    <p>Appointments Today</p>
+			                </div>
+			            </div>
+			            <div class="col-md-3">
+			                <div class="card-box bg-success">
+			                    <h5>8</h5>
+			                    <p>Prescriptions Sent</p>
+			                </div>
+			            </div>
+			            <div class="col-md-3">
+			                <div class="card-box bg-info">
+			                    <h5>28</h5>
+			                    <p>Total Patients</p>
+			                </div>
+			            </div>
+			        </div>
+
+			        <div class="row g-4 py-5">
+			            <div class="col-md-6">
+			                <div class="card shadow-sm p-3">
+			                    <h6 class="fw-bold">Patient Visits</h6>
+			                    <canvas id="lineChart"></canvas>
+			                </div>
+			            </div>
+			            <div class="col-md-6">
+			                <div class="card shadow-sm p-3">
+			                    <h6 class="fw-bold">Treatment Category</h6>
+			                    <canvas id="barChart"></canvas>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+				
+
+					</div>
+				</div>
+				
+				<style>
+					
+					        .card-box {
+					            border-radius: 20px;
+					            padding: 20px;
+					            color: white;
+					        }
+				</style>
+
+			    <!-- JS for charts -->
+				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+			    <script>
+			        const lineCtx = document.getElementById('lineChart');
+			        new Chart(lineCtx, {
+			            type: 'line',
+			            data: {
+			                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+			                datasets: [{
+			                    label: 'Visits',
+			                    data: [30, 50, 40, 70, 60, 80],
+			                    borderColor: 'blue',
+			                    fill: false,
+			                    tension: 0.4
+			                }]
+			            }
+			        });
+
+			        const barCtx = document.getElementById('barChart');
+			        new Chart(barCtx, {
+			            type: 'bar',
+			            data: {
+			                labels: ['General', 'Surgery', 'Dental', 'Skin'],
+			                datasets: [{
+			                    label: 'Patients',
+			                    data: [10, 15, 8, 5],
+			                    backgroundColor: ['#4caf50', '#2196f3', '#ff9800', '#f44336']
+			                }]
+			            }
+			        });
+			    </script>
+			
+		</main>
+	</body>
+</html>

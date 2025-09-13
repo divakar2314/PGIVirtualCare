@@ -1,0 +1,46 @@
+<html th:replace="~{Doctor/Doctorbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-11 mx-auto">
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="text-center text-white fw-bold">
+							Write Prescription for <span th:text="${appointment.patient.name}"></span>
+						</h4>
+					</div>
+					<div class="card-body">
+						<form method="post" th:object="${prescription}">
+							<div class="row">
+								<div class="col-sm-12 mt-3">
+									<label class="fw-bold">Diagonosis</label>
+									<textarea th:field="${prescription.diagonsis}" class="form-control"
+										placeholder="Write Diagonosis" required></textarea>
+								</div>
+								<div class="col-sm-12 mt-3">
+									<label class="fw-bold"> Give Advice</label>
+									<textarea th:field="${prescription.advice}" class="form-control"
+										placeholder="Give Advice" required></textarea>
+								</div>
+								
+								<div class="col-sm-12 mt-3">
+									<label class="fw-bold"> Write Medication</label>
+									<textarea th:field="${prescription.medicationDetails}" class="form-control" placeholder="Write Medication" required></textarea>
+									<input type="hidden" name="appointmentId" th:value="${appointment.id}">
+								</div>
+								
+								<div class="col-sm-12 text-center pt-5">
+									<button type="submit" class="btn btn-primary px-5">Submit</button>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

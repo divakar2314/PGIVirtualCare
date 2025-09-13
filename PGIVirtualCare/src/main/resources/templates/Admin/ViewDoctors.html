@@ -1,0 +1,71 @@
+<html th:replace ="~{Admin/Adminbase::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-header bg-primary text-white p-0">
+							<h3 class="fw-bold text-center">Manage Doctor</h3>
+							
+						</div>
+						
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Sr. No</th>
+											<th>Profile Pic</th>
+											<th>Doctor Name</th>
+											<th>Age</th>
+											<th>Gender</th>
+											<th>Email</th>
+											<th>Contact No</th>
+											<th>Aadhar No</th>
+											<th>Address</th>
+											<th>Reg. Date</th>
+											<th>Specilization</th>
+											<th>Status</th>
+											<th>Action</th>
+											
+										</tr>
+										
+									</thead>
+									 <tbody th:each="d, srno: ${doctorList}">
+										<tr>
+											<td th:text="${srno.index+1}">#1</td>
+											<td>@</td>
+											<td th:text="${d.name}">ABCD</td>
+											<td th:text="${d.age}">00</td>
+											<td th:text="${d.gender}">abc</td>
+											<td th:text="${d.email}">example@gmail.com</td>
+											<td th:text="${d.contactNumber}">1234xxxx78</td>
+											<td th:text="${d.aadharNumber}">99xxxxxxxx80</td>
+											<td th:text="${d.address}">Unknow Address</td>
+											<td th:text="${d.regDate}">DD/MM/YYYY</td>
+										    <td th:text="${d.specialization}">Abc</td>
+											<td class="text-center">
+												<a href="#" th:if="${d.status.name()=='PENDING'}" class="btn btn-warning btn-sm " th:text="${d.status}"></a>
+												<a href="#" th:if="${d.status.name()=='APPROVED'}" class="btn btn-success btn-sm " th:text="${d.status}"></a>
+												<a href="#" th:if="${d.status.name()=='DISABLED'}" class="btn btn-danger btn-sm " th:text="${d.status}"></a>
+											</td>
+											<td>
+												<a href="#" class="btn btn-success btn-sm">Edit</a>
+												<a href="#" class="btn btn-danger btn-sm">Delete</a>
+											</td>
+											
+											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

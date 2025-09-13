@@ -1,0 +1,99 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+<body style="background-color: #e9f7fe;"> <!-- Light blue background for full dashboard -->
+<main>
+	<div class="row">
+		<div class="col-sm-11 mx-auto mt-4">
+			<div class="card bg-white border-0 shadow-sm" style="border-radius: 10px;">
+				<div class="row px-4">
+					<div class="col-sm-6 p-4">
+						<h4 class="text-primary">Welcome, <span class="fw-bold" th:text="${session.loggedInPatient.name}"></span></h4>
+						<p class="text-secondary">Here is your professional dashboard to track your activity</p>
+					</div>
+					<div class="col-sm-6 text-right p-3">
+						<img src="../assets/img/profile2.jpg" alt="Image not found" class="rounded-circle shadow" width="80px">
+						<br>
+						<b class="d-block mt-2 text-dark" th:text="${session.loggedInPatient.name}" style="font-size: 18px;"> </b>
+						<p class="text-muted "th:text="${session.loggedInPatient.email}">example@gmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Dashboard Cards -->
+		<div class="col-sm-11 mx-auto mt-4">
+			<div class="row g-4">
+
+				<div class="col-md-4">
+					<div class="card text-center pt-4 pb-3 border-0 shadow-sm" style="border-radius: 12px; background-color: #ffffff;">
+						<div class="icon-circle bg-primary text-white mb-3 mx-auto">
+							<i class="fa-solid fa-calendar-check"></i>
+						</div>
+						<p class="text-muted m-0">Check your scheduled meetings</p>
+						<h5 class="fw-bold text-primary">Appointments</h5>
+						<h5 class="fw-bold text-dark">15</h5>
+						<a href="ViewAppointment" class="btn btn-outline-primary w-50 mx-auto mt-2">View</a>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center pt-4 pb-3 border-0 shadow-sm" style="border-radius: 12px; background-color: #ffffff;">
+						<div class="icon-circle bg-success text-white mb-3 mx-auto">
+							<i class="fa-solid fa-user-doctor"></i>
+						</div>
+						<p class="text-muted m-0">features including video calls, live chat, and messaging</p>
+						<h5 class="fw-bold text-success">Virtual consultation </h5>
+						<h5 class="fw-bold text-dark">8</h5>
+						<a href="#" class="btn btn-outline-success w-50 mx-auto mt-2">View</a>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="card text-center pt-4 pb-3 border-0 shadow-sm" style="border-radius: 12px; background-color: #ffffff;">
+						<div class="icon-circle bg-warning text-white mb-3 mx-auto">
+							<i class="fa-solid fa-file-medical"></i>
+						</div>
+						<p class="text-muted m-0">Download and View Your E-Prescription</p>
+						<h5 class="fw-bold text-warning">E-Prescription</h5>
+						<h5 class="fw-bold text-dark">5</h5>
+						<a href="ViewPrescriptions" class="btn btn-outline-warning w-50 mx-auto mt-2">View</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		
+
+		<!-- Appointment Call-To-Action -->
+		<div class="col-sm-11 mx-auto mt-4 mb-4">
+			<div class="card px-4 pt-4 bg-white shadow-sm border-0" style="border-radius: 12px;">
+				<div class="row">
+					<div class="col-sm-8">
+						<h5 class="text-dark">Make an Appointment for Better Health</h5>
+					</div>
+					<div class="col-sm-4 pb-3 text-right">
+						<a href="BookAppoinments" class="btn btn-primary shadow">Book Appointments</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Icon Styling -->
+	<style>
+		.icon-circle {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.8rem;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+
+</main>
+</body>
+</html>

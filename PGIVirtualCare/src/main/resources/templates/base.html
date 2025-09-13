@@ -1,0 +1,245 @@
+<html th:fragment="layout(content)">
+
+<head>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+	<!--==Outer start==-->
+	<div class="container-fluid py-2">
+		<!-- =====headline start=====-->
+		<div class="row align-items-center px-4 py-2 border" style="background-color: #f8f9fa; font-size: 16px;">
+
+			<!-- Contact Info -->
+			<div class="col-md-6 col-12 text-center text-md-start mb-2 mb-md-0">
+				<i class="fa-solid fa-phone me-2 text-primary"></i> +91 6306538167
+				<span class="mx-3 text-muted">|</span>
+				<i class="fa-solid fa-envelope me-2 text-primary"></i> info@pgivirtualcare.com
+			</div>
+
+			<!-- Social Media Icons -->
+			<div class="col-md-6 col-12 text-center text-md-end">
+				<ul class="list-inline mb-0 me-2" style="margin-bottom: 0;">
+					<a href="https://www.facebook.com/share/1G9YJng7fi/">
+						<li class="list-inline-item me-2">
+							<i class="fa-brands fa-facebook-f text-primary" style="font-size: 18px;"></i>
+						</li>
+					</a>
+					<a href="https://youtube.com/@divakarmaurya5677?si=ornzA90c-tLy-Uh0">
+						<li class="list-inline-item me-2">
+							<i class="fa-brands fa-youtube text-danger" style="font-size: 18px;"></i>
+						</li>
+					</a>
+					<li class="list-inline-item me-2">
+						<i class="fa-brands fa-instagram text-warning" style="font-size: 18px;"></i>
+					</li>
+					<li class="list-inline-item me-2">
+						<i class="fa-brands fa-linkedin-in text-info" style="font-size: 18px;"></i>
+					</li>
+					<li class="list-inline-item me-2">
+						<i class="fa-brands fa-telegram text-primary" style="font-size: 18px;"></i>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!---================headline end===========================================-->
+		<!--Navbar start-->
+		<div class="row sticky-top">
+			<div class="col-sm-12 p-0">
+				<nav class="navbar navbar-expand-lg sticky-top" style="background-color:white;">
+					<div class="container-fluid fs-5">
+						<a class="navbar-brand ps-5 fw-bold fs-3" style="color:  #23d6da;" href="#"><i
+								class="fa-solid fa-house-medical me-2"></i>PGI VIRTUALCARE</a>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+							data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ms-auto pe-5 ">
+								<li class="nav-item px-lg-3 ">
+									<a class="nav-link active text-dark hoverNavbar" aria-current="page"
+										href="/">Home</a>
+								</li>
+
+								<li class="nav-item px-lg-3">
+									<a class="nav-link  text-dark hoverNavbar" href="/AboutUs">About Us</a>
+								</li>
+
+
+								<li class="nav-item px-lg-3 ">
+									<a class="nav-link text-dark hoverNavbar" href="/Services">Services</a>
+								</li>
+
+
+
+								<li class="nav-item px-lg-3 ">
+									<a class="nav-link text-dark hoverNavbar" href="/Registration">Registration</a>
+								</li>
+
+
+								<li class="nav-item dropdown px-lg-3 ">
+									<a class="nav-link dropdown-toggle text-dark hoverNavbar" href="#" role="button"
+										data-bs-toggle="dropdown" aria-expanded="false">
+										Login
+									</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item text-dark " href="/AdminLogin">Admin Login</a></li>
+										<li><a class="dropdown-item text-dark " href="/DoctorLogin">Doctor Login</a>
+										</li>
+										<li><a class="dropdown-item text-dark" href="/PatientLogin">Patient Login</a>
+										</li>
+
+									</ul>
+								</li>
+
+								<li class="nav-item px-lg-3 ">
+									<a class="nav-link text-dark hoverNavbar" href="/ContactUs">Contact Us</a>
+								</li>
+
+							</ul>
+
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<!--============= Navbar end==========================-->
+
+
+		<!--=====================Main section start===========================-->
+		<div th:replace="${content}"></div>
+
+		<!--=======================Main section end===========================-->
+
+
+
+		<!-- Footer section start -->
+		<div class="row text-white pt-5 px-5 pb-3 mt-5" style="background-color:rgb(34, 35, 83)">
+
+
+			<div class="row px-lg-5 px-3">
+
+
+				<div class="col-md-3 mb-4 ">
+					<h5 class="text-info fw-bold border-bottom border-secondary border-3 pb-2 d-inline-block"
+						style="border-bottom-width: 2px;">
+						GET IN TOUCH
+					</h5>
+
+					<p class="pt-3">Have questions or feedback? Get in <br>touch — we’re here always.</p>
+					<p><span class="text-info"> <i class="fa-solid fa-location-dot me-2"></span></i>123 Street, Lucknow,
+						UP</p>
+					<p><span class="text-info"><i class="fa-solid fa-envelope me-2"></i></span>info@example.com</p>
+					<p><span class="text-info"><i class="fa-solid fa-phone me-2"></i></span>+91 6306538167</p>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="col-md-3 mb-4 ">
+					<h5 class="text-info fw-bold border-bottom border-secondary border-3 pb-2 d-inline-block"
+						style="border-bottom-width: 2px;">
+						QUICK LINKS
+					</h5>
+					<ul class="list-unstyled pt-3">
+						<li><i class="fa-solid fa-angle-right me-2"></i>Home</li>
+						<li><i class="fa-solid fa-angle-right me-2"></i>About Us</li>
+						<li><i class="fa-solid fa-angle-right me-2"></i>Our Services</li>
+						<li><i class="fa-solid fa-angle-right me-2"></i>Meet The Team</li>
+						<li><i class="fa-solid fa-angle-right me-2"></i>Latest Blog</li>
+					</ul>
+				</div>
+
+				<!-- Popular Links -->
+				<div class="col-md-3 mb-4 ">
+					<h5 class="text-info fw-bold border-bottom border-secondary border-3 pb-2 d-inline-block"
+						style="border-bottom-width: 2px;">
+						POPULAR LINKS
+					</h5>
+
+					<ul class="list-unstyled pt-3">
+					    <li><i class="fa-solid fa-angle-right me-2"></i>Home</li>
+			            <a href="/AboutUs"><li><i class="fa-solid fa-angle-right me-2 text-white"></i>About Us</li> </a>
+						<li><i class="fa-solid fa-angle-right me-2"></i>Our Services</li>
+						<li><i class="fa-solid fa-angle-right me-2"></i>Meet The Team</li>
+						<li><i class="fa-solid fa-angle-right me-2"></i>Latest Blog</li>
+					</ul>
+				</div>
+
+				<!-- Newsletter -->
+				<div class="col-md-3 mb-4">
+					<h5 class="text-info fw-bold border-bottom border-secondary border-3 pb-2 d-inline-block"
+						style="border-bottom-width: 2px;">
+						NEWSLETTER
+					</h5>
+
+					<form class="d-flex mb-3 pt-3">
+						<input type="email" class="form-control me-2" placeholder="Your Email Address">
+						<button class="btn btn-info text-white">Sign Up</button>
+					</form>
+
+					<h6 class="text-uppercase text-info">Follow Us</h6>
+					<!--icon-->
+					<div class="d-flex gap-2 pt-2">
+
+						<a href="#"
+							class="text-white bg-info rounded-circle d-flex align-items-center justify-content-center"
+							style="width: 45px; height: 45px;">
+							<i class="fa-brands fa-twitter"></i>
+						</a>
+
+						<a href="https://www.facebook.com/share/1G9YJng7fi/"
+							class="text-white bg-info rounded-circle d-flex align-items-center justify-content-center"
+							style="width: 45px; height: 45px;">
+							<i class="fa-brands fa-facebook-f"></i>
+						</a>
+
+						<a href="https://www.linkedin.com/in/divakar-maurya-69a134289/65dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+							class="text-white bg-info rounded-circle d-flex align-items-center justify-content-center"
+							style="width: 45px; height: 45px;">
+							<i class="fa-brands fa-linkedin-in"></i>
+						</a>
+
+						<a href="https://www.instagram.com/dm__6387?igsh=amlvNGQ2bjN1dGZx"
+							class="text-white bg-info rounded-circle d-flex align-items-center justify-content-center"
+							style="width: 45px; height: 45px;">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</div>
+
+					<!--icon end-->
+				</div>
+
+			</div>
+
+			<!-- Bottom Footer -->
+			<div class="mt-4 pt-3 border-top border-secondary px-3">
+				<div class="d-flex justify-content-between flex-wrap">
+					<span>&copy; <span class="text-info">Softpro India.</span> All Rights Reserved.</span>
+					<span>Designed by <span class="text-info">Divakar Maurya</span></span>
+				</div>
+			</div>
+
+		</div>
+
+		<!--Footer section end -->
+
+		<a href="#" class="btn btn-info rounded-circle back-to-top">
+			<i class="fas fa-arrow-up"></i>
+		</a>
+
+		<!--==Outer end==-->
+
+
+		<script src="js/style.js"></script>
+		<script src="js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

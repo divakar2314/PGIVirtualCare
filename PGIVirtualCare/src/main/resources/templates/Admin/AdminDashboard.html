@@ -1,0 +1,100 @@
+<html th:replace ="~{Admin/Adminbase::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="row py-4 .sticky-top">
+			        <div class="col-sm-12 mx-auto text-white bg-primary">
+			            <h3 class="text-center">Dashboard</h3>
+			        </div>
+			    </div>
+
+			     <!-- Cards -->
+			        <div class="row mt-4">
+			          <div class="col-md-3">
+			            <div class="card card-hover text-white bg-primary mb-3">
+			              <div class="card-body">
+			                <h5 th:text="${totalPatients}">1,200</h5>
+			                <p class="fs-5">Total Patients<br><small>+10% this week</small></p>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="col-md-3">
+			            <div class="card card-hover text-white  mb-3"style="background-color:gray;">
+			              <div class="card-body">
+			                <h5 th:text="${totalDocotors}">85</h5>
+			                <p class="fs-5">Available Doctors<br><small>Updated daily</small></p>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="col-md-3">
+			            <div class="card card-hover text-white bg-warning mb-3">
+			              <div class="card-body">
+			                <h5 th:text="${totalAppointments}">320</h5>
+			                <p class="fs-5"> Total Appointments<br><small>This month</small></p>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="col-md-3">
+			            <div class="card card-hover text-white  mb-3" style="background-color: deepskyblue;">
+			              <div class="card-body">
+			                <h5 th:text="${totalPrescription}">150</h5>
+			                <p class="fs-5"> Total Prescriptions<br><small>Issued today</small></p>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+					
+					<div class="row mt-4">
+						<div class="col-md-3">
+							<div class="card card-hover text-white  mb-3" style="background-color: blueviolet;">
+								<div class="card-body">
+									<h5 th:text="${totalEnquiry}">150</h5>
+									<p class="fs-5"> Total Enquiry<br><small></small></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card card-hover text-white bg-success mb-3">
+								<div class="card-body">
+									<h5 th:text="${AppAppointment}">150</h5>
+									<p class="fs-5"> Approved Appointment<br><small></small></p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-md-3">
+							<div class="card card-hover text-white bg-danger mb-3">
+								<div class="card-body">
+									<h5 th:text="${CancleAppointment}">150</h5>
+									<p class="fs-5"> Cancle Appointment<br><small></small></p>
+								</div>
+							</div>
+						</div>
+						
+						
+						</div>
+
+			        <!-- Charts -->
+			        <div class="row pt-5">
+			          <div class="col-md-6 mb-4">
+			            <div class="card p-3">
+			              <h6>Patient Visits Overview</h6>
+			              <canvas id="visitChart"></canvas>
+			            </div>
+			          </div>
+			          <div class="col-md-6 mb-4">
+			            <div class="card p-3">
+			              <h6>Doctor Availability</h6>
+			              <canvas id="doctorChart"></canvas>
+			            </div>
+			          </div>
+			        </div>
+			      </main>
+			    </div>
+			  </div>
+
+		</main>
+		
+		
+	</body>
+	
+</html>

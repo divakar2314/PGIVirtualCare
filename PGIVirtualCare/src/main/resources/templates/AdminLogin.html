@@ -1,0 +1,88 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+<body>
+	<main>
+		<!--===========Admin Login Start=======================-->
+		<div class="row"
+			style="background-image:url('images/Adminback.jpg'); background-size:cover; background-position:center;">
+			<div class="col-sm-12 py-5 bg-dark bg-opacity-50">
+				<h1 class="py-3 text-center text-white fw-bold display-4">Admin Login</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12 p-0">
+
+
+				<div class="container-fluid py-5 bg-info bg-opacity-10 ">
+					<div class="row justify-content-center align-items-center">
+						<!-- Left Image -->
+						<div class="col-md-5 d-none d-md-block text-center">
+							<img src="images/AdminSide.jpg" alt="Admin Security Login" class="img-fluid rounded shadow"
+								style="max-height: 400px;">
+						</div>
+
+						<!-- Right Form -->
+						<div class="col-md-5 col-sm-10">
+							<div th:if="${msg}" class="alert alert-warning alert-dismissible fade show" role="alert">
+								<span th:text="${msg}"></span>
+								<button type="button" class="btn-close" data-bs-dismiss="alert"
+									aria-label="Close"></button>
+							</div>
+
+							<form action="/AdminLogin" method="post">
+								<div class="card p-4 shadow border-2 border-info">
+									<h3 class="text-center text-primary mb-4 fw-bold">Login as a Administration</h3>
+
+									<label for="email" class="fw-bold text-primary">Enter Username (Email)</label>
+									<input type="email" name="email" id="email"
+										class="form-control border-info border-2 rounded-0 mb-3"
+										placeholder="Enter User (Email)" required>
+
+									<label for="password" class="fw-bold text-primary">Enter Password</label>
+									<div class="input-group mb-4">
+										<input type="password" name="password" id="password"
+											class="form-control border-2 border-info rounded-0" placeholder="Password"
+											required>
+										<span class="input-group-text bg-info text-white" style="cursor:pointer;"
+											onclick="togglePassword()">
+											<i class="bi bi-eye-fill" id="eyeIcon"></i>
+										</span>
+									</div>
+
+									<div class="text-center">
+										<button type="submit" class="btn btn-primary px-5 text-white fw-bold">Login</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<!--===========Admin Login End=========================-->
+       
+		<script>
+			function togglePassword() {
+				const password = document.getElementById("password");
+				const eyeIcon = document.getElementById("eyeIcon");
+				if (password.type === "password") {
+					password.type = "text";
+					eyeIcon.classList.remove("bi-eye-fill");
+					eyeIcon.classList.add("bi-eye-slash-fill");
+				} else {
+					password.type = "password";
+					eyeIcon.classList.remove("bi-eye-slash-fill");
+					eyeIcon.classList.add("bi-eye-fill");
+				}
+			}
+		</script>
+
+
+	</main>
+
+</body>
+
+</html>

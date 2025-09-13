@@ -1,0 +1,94 @@
+<html th:replace="~{Admin/Adminbase::layout(~{::main})}">
+
+<body>
+	<main>
+		<div class="row">
+			<div class="col-sm-11 mx-auto">
+				<div class="card">
+					<div class="card-header bg-primary">
+						<div class="row">
+							<div class="col-sm-6">
+								<h4 class=" text-white  fw-bold m-0">
+									 Total Prescription
+								</h4>
+							</div>
+
+							<div class="col-sm-6 text-right">
+								<a href="AdminDashboard" class="btn btn-light text-dark">Back To Dashboard</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Sr. No</th>
+										<th>Patient ID</th>
+										<th>Patient Name</th>
+										<th>PatientContact No</th>
+										<th>Patient Age</th>
+										
+										<th>Doctor Name</th>
+										<th>Doctor Contact</th>
+										<th>Advice</th>
+										<th>Diagonsis</th>
+										<th>Prescription Date</th>
+										
+										
+
+
+
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr th:each="apt, srno: ${prescriptiontList}">
+										<td th:text="${srno.index+1}"></td>
+										<td th:text="${apt.patient.id}"></td>
+										<td th:text="${apt.patient.name}"></td>
+										<td th:text="${apt.patient.contactNumber}"></td>
+										<td th:text="${apt.patient.age}"></td>
+										
+										<td th:text="${apt.doctor.name}"></td>
+										<td th:text="${apt.doctor.contactNumber}"></td>
+										
+										<td th:text="${apt.advice}"></td>
+										<td th:text="${apt.diagonsis}"></td>
+										<td th:text="${apt.prescriptionDate}"></td>
+										
+										<!--<td class="text-center">
+											<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name()=='PENDING'}" class="btn btn-warning btn-sm "
+												th:text="${p.status}"></a>
+											<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name()=='APPROVED'}" class="btn btn-success btn-sm "
+												th:text="${p.status}"></a>
+											<a th:href="@{PatientStatus(id=${p.id})}" th:if="${p.status.name()=='DISABLED'}" class="btn btn-danger btn-sm "
+												th:text="${p.status}"></a>
+										</td>
+										<td>
+											<a href="#" class="btn btn-success btn-sm">Edit</a>
+											<a th:href="@{DeletePatient(id=${p.id})}" onclick=" return confirm('Are you sure want to delete?')"
+												class="btn btn-danger btn-sm">Delete</a>
+										</td>-->
+
+										
+										
+										
+
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+</body>
+
+</html>

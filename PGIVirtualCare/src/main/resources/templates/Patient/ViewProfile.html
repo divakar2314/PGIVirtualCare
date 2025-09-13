@@ -1,0 +1,64 @@
+<html th:replace="~{Patient/Patientbase::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="row">
+				<div class="col-sm-10 mx-auto">
+				<div class="card shadow-lg border-0">
+					
+					<!-- Profile Picture -->
+					<div class="card-header bg-warning text-white text-center py-4">
+						<img src="../assets/img/AdminImg.jpg" alt="Profile Photo" class="rounded-circle border border-white shadow" width="120" height="120">
+						<h4 class="mt-3 mb-0 fw-bold"><sapn th:text="${session.loggedInPatient.name}"></sapn></h4>
+					</div>
+					
+					<!-- Profile Details -->
+					<div class="card-body bg-light px-4 py-5">
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Name:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.name}"></span>
+						</div>
+						
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Contact Number:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.contactNumber}"></span>
+						</div>
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Age:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.age}"></span>
+						</div>
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Aadhar Number:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.aadharNumber}"></span>
+						</div>
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Address:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.address}"></span>
+						</div>
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Gender:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.gender}"></span>
+						</div>
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Role:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.role}"></span>
+						</div>
+
+						<div class="mb-3 p-3 bg-white border-start border-4 border-info shadow-sm rounded">
+							<strong>Specialization:</strong>
+							<span class="ms-2 text-primary fw-semibold" th:text="${session.loggedInPatient.specialization}"></span>
+						</div>
+
+					</div>
+				</div>
+				</div>
+			</div>
+
+		</main>
+	</body>
+</html>

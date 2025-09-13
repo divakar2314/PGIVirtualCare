@@ -1,0 +1,59 @@
+<html th:replace ="~{Admin/Adminbase::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-header bg-primary text-white p-0">
+							<h3 class="fw-bold text-center"> Patient Enquiry</h3>
+							
+						</div>
+						
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Sr. No</th>
+											<th>Patient Name</th>
+											<th>Gender</th>
+											<th>Email</th>
+											<th>Contact No</th>
+											<th>Message</th>
+											<th>Enquiry Date</th>
+											<th>Subject</th>
+											<th>Action</th>		
+										</tr>
+										
+									</thead>
+									<tbody th:each="p, srno: ${enquiryList}">
+										<tr>
+											<td th:text="${srno.index}">#1</td>
+											<td th:text="${p.name}">ABCD</td>
+											<td th:text="${p.gender}">abc</td>
+											<td th:text="${p.email}">example@gmail.com</td>
+											<td th:text="${p.contactNo}">1234xxxx78</td>
+											<td th:text="${p.message}">abcde</td>
+											<td th:text="${p.enquiryDate}">DD/MM/YYYY</td>
+											<td th:text="${p.subject}">xyz</td>
+											
+											<td >
+												<a th:href="@{DeleteEnquiry(id=${p.id})}" onclick=" return confirm('Are you sure want to delete?')" class="btn btn-danger bt-sm">Delete</a>
+											</td>
+											
+											
+												
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
